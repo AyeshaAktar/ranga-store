@@ -227,7 +227,7 @@ const showProducts = (products) => {
 
     const div = document.createElement("div");
     div.classList.add("product");
-    div.innerHTML = `<div class="single-product g-4">
+    div.innerHTML = `<div class="single-product">
       <div>
     <img class="product-image" src=${image}></img>
       </div>
@@ -263,12 +263,13 @@ const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
   const total = convertedOldPrice + convertPrice;
-  document.getElementById(id).innerText = Math.round(total);
+  console.log(value);
+  document.getElementById(id).innerText = total;
 };
 
 // set innerText function
 const setInnerText = (id, value) => {
-  document.getElementById(id).innerText = Math.round(value);
+  document.getElementById(id).innerText = value;
 };
 
 // update delivery charge and total Tax
